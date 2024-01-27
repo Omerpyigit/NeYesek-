@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.TarifEkleAdmin"
+    android:background="@color/paletBeyaz"
+    >
+
+    <RelativeLayout
+        android:id="@+id/toolbarRL"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/buttonshape1">
+
+        <ImageButton
+            android:id="@+id/backbutton3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/transparent"
+            android:contentDescription="z"
+            android:padding="5dp"
+            android:src="@drawable/ic_geriok" />
+
+        <ImageButton
+            android:id="@+id/attachBut"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/transparent"
+            android:contentDescription="z"
+            android:padding="5dp"
+            android:src="@drawable/ic_attach" />
+
+        <ImageView
+            android:id="@+id/iconIv"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_below="@id/backbutton3"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_food" />
+
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iconIv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Yeni bir tarif ekle"
+            android:textColor="@color/white"
+            android:textSize="28sp" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/titleEt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="225dp"
+        android:background="@drawable/edittextarkaplan"
+        android:hint="Tarif Adı"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gri"
+        android:drawableStart="@drawable/ic_title"
+        android:drawablePadding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/descriptionEt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:layout_below="@id/titleEt"
+        android:background="@drawable/edittextarkaplan"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gri"
+        android:textSize="16sp"
+        android:hint="Tarif detay"
+        android:drawableStart="@drawable/ic_desc_gri"
+        android:drawablePadding="10dp"/>
+
+
+    <!-- kategori seçme açılır text -->
+    <TextView
+        android:id="@+id/kategoriTvv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descriptionEt"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edittextarkaplan"
+        android:drawableStart="@drawable/kategori_icon"
+        android:drawableEnd="@drawable/ic_down_gray"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:hint="Tarif Kategorisi"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gri"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/kaydetBut2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/kategoriTvv"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp"
+        android:text="Yükle"
+        android:textColor="@color/white"
+        android:background="@drawable/button"/>
+
+</RelativeLayout>

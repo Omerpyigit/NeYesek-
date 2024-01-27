@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "792175992474",
+    "firebase_url": "https://neyeseklogin-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "neyeseklogin",
+    "storage_bucket": "neyeseklogin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792175992474:android:3aec6cad667a7a2ba5c923",
+        "android_client_info": {
+          "package_name": "com.example.bugunneyesem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_LFlpV-niO9UmHZBFCqKuC4_rIIdOHfQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

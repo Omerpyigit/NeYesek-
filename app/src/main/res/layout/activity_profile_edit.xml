@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.ProfileEditActivity">
+    
+    <!--Toolbar -->
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/purple_500">
+        
+        <!--Geri Buton-->
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="a"
+            android:src="@drawable/ic_geriok"
+            android:layout_margin="10dp"
+            android:background="@color/transparent"/>
+        <!--Başlık-->
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profilini Düzenle"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileTv"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/toolbarTitleTv"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_profile_gray"
+            android:background="@color/white"
+            app:shapeAppearanceOverlay="@style/styleRoundedCornersImage"/>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="225dp">
+        <!--EditText Kullanıcı Adı -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameTil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintEnabled="false">
+
+            <EditText
+                android:id="@+id/nameEt"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/edittextarkaplan"
+                android:drawableStart="@drawable/ic_profile_gray"
+                android:drawablePadding="10dp"
+                android:inputType="textPersonName|textCapWords"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray04"
+                android:hint="Kullanıcı Adı"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--Buton Güncelle-->
+
+        <Button
+            android:id="@+id/updateBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameTil"
+            android:background="@drawable/button"
+            android:textColor="@color/paletBeyaz"
+            android:layout_marginTop="20dp"
+            android:text="GÜNCELLE"/>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

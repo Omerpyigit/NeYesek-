@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paletBeyaz"
+    tools:context=".activities.ManiAnasayfa">
+
+    <RelativeLayout
+        android:id="@+id/toolBr"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/purple_500">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:drawableStart="@drawable/hosgeldin"
+            android:padding="10dp"
+            android:drawablePadding="10dp"
+            android:text="TextView"
+            android:textSize="18sp"
+            android:fontFamily="@font/myfont"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.088"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/profileBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:contentDescription="a"
+            android:src="@drawable/ic_profile"
+            android:layout_alignParentEnd="true" />
+
+
+    </RelativeLayout>
+    
+    <TextView
+        android:id="@+id/oneriTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/myfont"
+        android:text="Bunu beğenebilirsin"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/toolBr"/>
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardVw"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/oneriTv"
+        app:cardCornerRadius="10dp"
+        app:cardUseCompatPadding="true">
+
+        <ImageView
+            android:id="@+id/imgRandomm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/paletPink"
+            android:scaleType="centerCrop"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/aracizgi"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/paletMorAcik"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/cardVw"/>
+
+
+
+    <Button
+        android:id="@+id/btnCikis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:drawableRight="@drawable/ic_exit"
+        android:padding="10dp"
+        android:text="ÇIKIŞ"
+        android:textSize="15sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+         />
+
+
+    <Button
+        android:id="@+id/btnTarifler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_acikmor"
+        android:drawableStart="@drawable/tarifler_logo"
+        android:padding="10dp"
+        android:text="TARİFLER"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_below="@id/aracizgi"
+        />
+
+    <Button
+        android:id="@+id/btnFavorilerim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_acikmor"
+        android:drawableStart="@drawable/favori_list_logo"
+        android:padding="10dp"
+        android:text="FAVORİLERİM"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_below="@id/btnTarifler" />
+
+    <Button
+        android:id="@+id/btnYemekTakvimi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_acikmor"
+        android:drawableStart="@drawable/takvim_logo"
+        android:padding="10dp"
+        android:text="YEMEK TAKVİMİM"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_below="@id/btnFavorilerim" />
+
+
+</RelativeLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paletBeyaz"
+    tools:context=".activities.KategoriEkle">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/buttonshape1">
+
+        <ImageButton
+            android:id="@+id/backbutton2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/transparent"
+            android:contentDescription="b"
+            android:padding="5dp"
+            android:src="@drawable/ic_geriok" />
+
+        <ImageView
+            android:id="@+id/iconKat"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_below="@id/backbutton2"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/baseline_description_24" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iconKat"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="28sp"
+            android:text="Yeni bir kategori ekle"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/kategoriTill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="230dp"
+        app:hintEnabled="false">
+
+        <EditText
+            android:id="@+id/kategoriEt"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/kategori_icon"
+            android:drawablePadding="10dp"
+            android:hint="Kategori İsmi"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gri" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/kaydetBut1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/kategoriTill"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
+        android:text="KAYDET"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonshape1"/>
+
+</RelativeLayout>

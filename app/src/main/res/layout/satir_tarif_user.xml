@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/white"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="0dp"
+    app:contentPadding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+       <!--Tarif foto view -->
+        <RelativeLayout
+            android:id="@+id/imgRl"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="@color/gray04"
+            android:layout_marginEnd="5dp">
+
+            <ImageView
+                android:scaleType="centerCrop"
+                android:id="@+id/imgView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <!--
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/> -->
+
+
+        </RelativeLayout>
+        <!--Başlık -->
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tarif İsmi"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_toEndOf="@+id/imgRl"
+            android:maxLines="1"/>
+        <!--Aciklama -->
+        <TextView
+            android:id="@+id/aciklamaTv"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray04"
+            android:text="Tarif Aciklama"
+            android:layout_toEndOf="@+id/imgRl"
+            android:layout_below="@id/titleTv"
+            android:maxLines="4"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"/>
+        <!--Kategori -->
+        <TextView
+            android:id="@+id/kategoriTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:text="Kategori"
+            android:textColor="@color/gray04"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:maxLines="1"/>
+
+        <!--Date -->
+        <TextView
+            android:id="@+id/dateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:text="gg/AA/yyyy"
+            android:textColor="@color/gray04"
+            android:maxLines="1"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@id/imgRl"/>
+
+        <!--Görüntüleme -->
+        <TextView
+            android:id="@+id/goruntulemeLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:text="Görüntüleme Sayısı:"
+            android:textColor="@color/gray04"
+            android:layout_toEndOf="@id/imgRl"
+            android:layout_below="@id/aciklamaTv"
+            android:maxLines="1"
+            android:layout_marginTop="4dp"/>
+        <TextView
+            android:id="@+id/goruntulemeTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:textColor="@color/gray04"
+            android:text="N/A"
+            android:layout_toEndOf="@id/goruntulemeLabelTv"
+            android:layout_below="@id/aciklamaTv"
+            android:maxLines="1"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="4dp"/>
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

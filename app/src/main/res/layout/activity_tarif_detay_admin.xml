@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.TarifDetayActivityAdmin">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/purple_500">
+
+        <ImageButton
+            android:id="@+id/backbutton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_geriok"
+            android:contentDescription="a"
+            android:background="@color/transparent"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tarif Detay"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <Button
+            android:id="@+id/favButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="a"
+            android:drawableEnd="@drawable/favori_bos_beyaz"
+            android:padding="10dp"
+            android:background="@color/transparent"
+            />
+
+
+
+    </RelativeLayout>
+    <!--Tüm içeirk kaydırılabilir ekranda -->
+
+    <ScrollView
+        android:padding="10dp"
+        android:layout_below="@id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Tarif info kücük ekran -->
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--Img preview-->
+                <RelativeLayout
+                    android:id="@+id/tarifRl"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@color/gray03">
+
+                    <ImageView
+                        android:scaleType="centerCrop"
+                        android:id="@+id/imgView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        />
+                    <!--Progress bar ama hata veriyor
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/> -->
+
+                </RelativeLayout>
+
+                <!--Tarif title-->
+                <TextView
+                    android:id="@+id/titleTv"
+                    style="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/tarifRl"
+                    android:textColor="@color/black"
+                    android:text="Tarif Baslik">
+
+                </TextView>
+
+
+                
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/titleTv"
+                    android:layout_toEndOf="@id/tarifRl">
+
+                    <!--Kategori satırı -->
+                    <TableRow>
+                        <TextView
+                            android:id="@+id/kategoriLabelTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kategori"
+                            android:layout_marginEnd="5dp"
+                            android:textColor="@color/gray04"/>
+                        <TextView
+                            android:id="@+id/kategoriTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="N/A"
+                            android:layout_marginEnd="5dp"
+                            android:textColor="@color/gray04"/>
+                    </TableRow>
+
+                    <!--Paylaşan satırı -->
+                    <TableRow android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:id="@+id/yayinlayanLabelTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Yayınlayan"
+                            android:layout_marginEnd="5dp"
+                            android:textColor="@color/gray04"/>
+                        <TextView
+                            android:id="@+id/yayinlayanTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="N/A"
+                            android:layout_marginEnd="5dp"
+                            android:textColor="@color/blue01"/>
+                    </TableRow>
+
+                    <!--Tarih satırı -->
+                    <TableRow android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:id="@+id/dateLabelTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tarih"
+                            android:layout_marginEnd="5dp"
+                            android:textColor="@color/gray04"/>
+                        <TextView
+                            android:id="@+id/dateTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="N/A"
+                            android:layout_marginEnd="5dp"
+                            android:textColor="@color/gray04"/>
+                    </TableRow>
+
+                    <!--Favoriler satırı -->
+                    <TableRow android:layout_marginTop="5dp">
+                        <TextView
+                            android:id="@+id/favorilerLabelTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Favori Sayısı"
+                            android:layout_marginEnd="5dp"
+                            android:textColor="@color/gray04"/>
+                        <TextView
+                            android:id="@+id/favoriTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="N/A"
+                            android:layout_marginEnd="5dp"
+                            android:textColor="@color/gray04"/>
+                    </TableRow>
+
+                    <!--Görüntüleme satırı -->
+                    <TableRow android:layout_marginTop="5dp">
+                        <TextView
+                            android:id="@+id/goruntulemeLabelTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Görüntüleme"
+                            android:layout_marginEnd="5dp"
+                            android:textColor="@color/gray04"/>
+                        <TextView
+                            android:id="@+id/goruntulemeTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="N/A"
+                            android:layout_marginEnd="5dp"
+                            android:textColor="@color/gray04"/>
+                    </TableRow>
+
+                    <!--Puan satırı
+                    <TableRow android:layout_marginTop="5dp">
+                        <TextView
+                            android:id="@+id/puanLabelTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Puan"
+                            android:layout_marginEnd="5dp"
+                            android:textColor="@color/gray04"/>
+                        <TextView
+                            android:id="@+id/puanTv"
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="N/A"
+                            android:layout_marginEnd="5dp"
+                            android:textColor="@color/gray04"/>
+                    </TableRow>  -->
+
+                </TableLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/aciklamaTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Tarif açıklama"
+                android:textColor="@color/black"/>
+            
+            <!--Ayırmak için gri çizgi-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/gray04"
+                android:layout_marginTop="5dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--Yorumlar Başlık-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:padding="5dp"
+                    android:textSize="16sp"
+                    android:text="Yorumlar"
+                    android:layout_centerInParent="true"/>
+                <!--Yorum Ekle Buton-->
+                <ImageButton
+                    android:id="@+id/addCommentBtn"
+                    android:contentDescription="a"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_comment_black"
+                    android:background="@color/transparent"/>
+
+                <!--RecyclerView yorumları göstermek için -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/commentsRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/addCommentBtn"
+                    tools:listitem="@layout/satir_yorum"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

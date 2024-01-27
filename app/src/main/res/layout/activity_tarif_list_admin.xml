@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.TarifListActivityAdmin"
+    android:background="@color/paletBeyaz">
+
+    <!--Tool bar kısmı -->
+    <RelativeLayout
+        android:id="@+id/toolbarRL"
+        android:background="@color/purple_500"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <!--Geri ok -->
+        <ImageButton
+            android:id="@+id/backbutton4"
+            android:contentDescription="b"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_geriok"
+            android:background="@color/transparent"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:padding="10dp">
+
+        </ImageButton>
+        
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TARİFLER"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/subtitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Kategori"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/titleTv">
+
+        </TextView>
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/searchEt"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/toolbarRL"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:hint="Ara"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gri">
+
+    </EditText>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/yemeklerRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchEt"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/satir_tarif_admin">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</RelativeLayout>

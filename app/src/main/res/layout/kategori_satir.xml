@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:contentPadding="0dp"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/gray03">
+        
+        <TextView
+            android:id="@+id/kategoriTv"
+            android:layout_width="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Kategori İsmi"
+            android:textColor="@color/black">
+
+        </TextView>
+
+        <ImageButton
+            android:id="@+id/silButton"
+            android:layout_width="48dp"
+            android:contentDescription="a"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_sil"
+            android:background="@drawable/buttonshape03">
+
+        </ImageButton>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/shape_rec02"
+    android:padding="20dp">
+
+    <!--Yorum iptal geri dön-->
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:contentDescription="a"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back_siyah"
+        android:padding="5dp"
+        android:background="@color/transparent"/>
+
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:padding="5dp"
+        android:text="Yorum Ekle"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="@color/paletMor"
+        android:textSize="16sp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/commenTil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/backBtn"
+        app:startIconDrawable="@drawable/ic_yorum_black"
+        android:layout_marginTop="20dp"
+        android:hint="Yorum yaz"
+        android:textColorHint="@color/gray04"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/commentEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittextarkaplan"
+            android:textColor="@color/black"
+            android:inputType="textMultiLine"/>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/commenTil"
+        android:layout_marginTop="20dp"
+        android:text="GÖNDER"
+        android:background="@drawable/button"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>
