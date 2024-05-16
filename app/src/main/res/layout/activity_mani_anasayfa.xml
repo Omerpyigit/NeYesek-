@@ -139,7 +139,7 @@
         android:layout_below="@id/btnTarifler" />
 
     <Button
-        android:id="@+id/btnYemekTakvimi"
+        android:id="@+id/btnNePisirsem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -148,7 +148,8 @@
         android:background="@drawable/button_acikmor"
         android:drawableStart="@drawable/takvim_logo"
         android:padding="10dp"
-        android:text="YEMEK TAKVİMİM"
+        android:text="NE PİŞİRSEM? "
+        android:fontFamily="@font/lobster"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:layout_below="@id/btnFavorilerim" />

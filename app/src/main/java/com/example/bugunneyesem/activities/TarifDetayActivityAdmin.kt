@@ -188,6 +188,8 @@ class TarifDetayActivityAdmin : AppCompatActivity() {
                     val kategoriId = "${snapshot.child("kategoriId").value}"
                     val baslik = "${snapshot.child("baslik").value}"
                     val aciklama = "${snapshot.child("aciklama").value}"
+                    var malzemeler = "${snapshot.child("malzemeler").value}"
+                    val tarifDetay = "${snapshot.child("tarifDetay").value}"
                     val favoriler = "${snapshot.child("favoriler").value}"
                     val timestamp = "${snapshot.child("timestamp").value}"
                     val viewsCount = "${snapshot.child("viewsCount").value}"
@@ -238,8 +240,8 @@ class TarifDetayActivityAdmin : AppCompatActivity() {
                         .into(binding.imgView) */
 
                     binding.titleTv.text = baslik
-
-                    binding.aciklamaTv.text = aciklama
+                    binding.malzemelerTv.text = malzemeler.replace(",","\n")
+                    binding.aciklamaTv.text = tarifDetay.replace(".",".\n")
                     binding.dateTv.text = date
                     binding.goruntulemeTv.text = viewsCount
                     binding.favoriTv.text = favoriler

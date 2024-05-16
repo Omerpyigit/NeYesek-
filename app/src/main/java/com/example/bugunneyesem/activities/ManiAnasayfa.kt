@@ -66,10 +66,15 @@ class ManiAnasayfa : AppCompatActivity() {
             startActivity(Intent(this,ProfileActivity::class.java))
         }
 
+        binding.btnNePisirsem.setOnClickListener {
+            startActivity(Intent(this, NePisirsem::class.java))
+        }
+
 
     }
 
     private fun loadAllFoods(){
+
         foodArrayList = ArrayList()
         val ref = FirebaseDatabase.getInstance().getReference("Tarifler")
         ref.addValueEventListener(object: ValueEventListener{

@@ -7,6 +7,8 @@ class ModelTarif {
     var id:String = ""
     var baslik:String = ""
     var aciklama:String = ""
+    var malzemeler:String = ""
+    var tarifDetay:String = ""
     var kategoriId:String = ""
     var img:String = ""
     var timestamp:Long = 0
@@ -24,6 +26,8 @@ class ModelTarif {
         id: String,
         baslik: String,
         aciklama: String,
+        malzemeler: String,
+        tarifDetay: String,
         kategoriId: String,
         img: String,
         timestamp: Long,
@@ -35,6 +39,8 @@ class ModelTarif {
         this.id = id
         this.baslik = baslik
         this.aciklama = aciklama
+        this.malzemeler = malzemeler
+        this.tarifDetay = tarifDetay
         this.kategoriId = kategoriId
         this.img = img
         this.timestamp = timestamp

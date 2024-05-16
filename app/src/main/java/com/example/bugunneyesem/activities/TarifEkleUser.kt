@@ -39,6 +39,14 @@ class TarifEkleUser : AppCompatActivity() {
 
         loadTarifKategorileri()
 
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Bilgilendirme")
+            .setMessage("Tarifin malzemelerini eklerken her malzeme arasına , (virgül) ekleyiniz")
+            .setPositiveButton("TAMAM"){a, d->
+                a.dismiss()
+            }
+            .show()
+
         binding.backbutton3.setOnClickListener{
 
             startActivity(Intent(this, TariflerPageUser::class.java))
@@ -62,12 +70,16 @@ class TarifEkleUser : AppCompatActivity() {
     private var title = ""
     private var aciklama = ""
     private var kategori = ""
+    private var malzemeler = ""
+    private var tarifDetay = ""
 
     private fun validateData(){
         Log.d(TAG, "validateData: validating data")
         val timestamp = System.currentTimeMillis()
         title = binding.titleEt.text.toString().trim()
         aciklama = binding.descriptionEt.text.toString().trim()
+        malzemeler = binding.malzemelerEt.text.toString().trim()
+        tarifDetay = binding.detayEt.text.toString().trim()
         kategori = binding.kategoriTvv.text.toString().trim()
 
         //eksik veri varmı uyarı
@@ -75,7 +87,13 @@ class TarifEkleUser : AppCompatActivity() {
             Toast.makeText(this,"Tarif İsmi Giriniz ",Toast.LENGTH_SHORT).show()
         }
         else if(aciklama.isEmpty()){
-            Toast.makeText(this,"Tarif Detay Giriniz ",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"Tarif Açıklama Giriniz ",Toast.LENGTH_SHORT).show()
+        }
+        else if(malzemeler.isEmpty()){
+            Toast.makeText(this,"Tarifin Malzemelerini Giriniz ",Toast.LENGTH_SHORT).show()
+        }
+        else if(tarifDetay.isEmpty()){
+            Toast.makeText(this,"Tarifin Detayını Giriniz ",Toast.LENGTH_SHORT).show()
         }
         else if(kategori.isEmpty()){
             Toast.makeText(this,"Kategori Seçiniz ",Toast.LENGTH_SHORT).show()
@@ -166,6 +184,8 @@ class TarifEkleUser : AppCompatActivity() {
         hashMap["id"] = "$timestamp"
         hashMap["baslik"] = "$title"
         hashMap["aciklama"] = "$aciklama"
+        hashMap["malzemeler"] = "$malzemeler"
+        hashMap["tarifDetay"] = "$tarifDetay"
         hashMap["kategoriId"] = "$selectedCategoryId"
         hashMap["img"] = "$uploadadImgUrl"
         hashMap["timestamp"] = timestamp

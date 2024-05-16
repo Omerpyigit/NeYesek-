@@ -238,12 +238,42 @@
             </RelativeLayout>
 
             <TextView
+                android:id="@+id/malzemelerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Gerekli Malzemeler"
+                android:fontFamily="@font/myfont"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/malzemelerTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Malzemeler"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:id="@+id/detayText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Tarif Detay"
+                android:fontFamily="@font/myfont"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                />
+            <TextView
                 android:id="@+id/aciklamaTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="Tarif açıklama"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                />
+
             
             <!--Ayırmak için gri çizgi-->
             <View
