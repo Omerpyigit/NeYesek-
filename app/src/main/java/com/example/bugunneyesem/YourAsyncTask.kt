@@ -1,12 +1,12 @@
 
 import android.content.Context
+import android.util.Log
 import android.widget.TextView
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONObject
-
 class FetchYemeklerTask(private val context: Context, private val textView: TextView) {
 
     fun execute(url: String, malzemeler: List<String>) {
@@ -18,7 +18,7 @@ class FetchYemeklerTask(private val context: Context, private val textView: Text
         jsonObject.put("malzemeler", malzemeler)
 
         // JSON nesnesini POST isteği olarak gönder
-        val jsonObjectRequest = JsonObjectRequest(Request.Method.POST, url, jsonObject,
+        val jsonObjectRequest = object : JsonObjectRequest(Request.Method.POST, url, jsonObject,
             Response.Listener { response ->
                 // Yanıtı işle ve TextView'e yaz
                 try {
@@ -30,14 +30,28 @@ class FetchYemeklerTask(private val context: Context, private val textView: Text
                     textView.text = yemeklerList.joinToString("\n")
                 } catch (e: Exception) {
                     e.printStackTrace()
+                    Log.e("FetchYemeklerTask", "Error processing response: ${e.message}")
                 }
             },
             Response.ErrorListener { error ->
                 // Hata durumunda ekrana bir mesaj yazdır
                 error.printStackTrace()
                 textView.text = "Bir hata oluştu: ${error.message}"
-            })
+            }) {
+            /*
 
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["Cache-Control"] = "no-cache"
+                return headers
+            }
+            override fun getCacheKey(): String {
+                // Önbelleği devre dışı bırak
+                return super.getCacheKey() + "-no-cache"
+            }
+            */
+             
+        }
         // Request'i kuyruğa ekle
         requestQueue.add(jsonObjectRequest)
     }

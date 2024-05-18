@@ -2,9 +2,9 @@ package com.example.bugunneyesem.activities
 
 import FetchYemeklerTask
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bugunneyesem.MalzemeDialog
+import com.example.bugunneyesem.MalzemeDialogListener
 import com.example.bugunneyesem.databinding.ActivityNePisirsemBinding
 import com.example.bugunneyesem.models.ModelMalzeme
 import com.google.firebase.auth.FirebaseAuth
@@ -12,14 +12,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.RequestBody.Companion.toRequestBody
-import org.json.JSONObject
-import java.io.IOException
 
-class NePisirsem : AppCompatActivity() {
+class NePisirsem : AppCompatActivity(), MalzemeDialogListener {
     private lateinit var binding: ActivityNePisirsemBinding
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var malzemelerArrayList: ArrayList<ModelMalzeme>
@@ -46,7 +40,7 @@ class NePisirsem : AppCompatActivity() {
         binding.kaydetBut1.setOnClickListener {
             val fetchYemeklerTask = FetchYemeklerTask(this, binding.sonucTV)
             val url = "http://192.168.1.102:5000/oneri-yemekler"
-            val malzemeler = listOf("soğan", "kıyma", "sarımsak")
+            val malzemeler = listOf("çilek", "yumurta", "şeker","süt")
             fetchYemeklerTask.execute(url, malzemeler)
         }
     }
@@ -103,44 +97,26 @@ class NePisirsem : AppCompatActivity() {
 
 
         val builder = MalzemeDialog(this,data)
+        builder.setMalzemeDialogListener(this)
         builder.show(supportFragmentManager,"")
         builder.isCancelable = false
+        val selectedMalzemeler = MalzemeDialog.selectedMalzemeler
 
     }
-
-    private fun malzemeEkle(){
-        val selectedMalzemeler = ArrayList<String>()
-        var item = selectedMalzemeName.toString()
-        selectedMalzemeler.add(item)
+    override fun onMalzemelerSecildi(selectedMalzemeler: List<String>) {
+        // Seçilen malzemeleri burada kullanabilirsiniz
+        // Örneğin, bir listede görüntülemek veya işlemek için
+        // Seçilen malzemeleri bir listeye atayarak kullanabilirsiniz
+        val selectedMalzemeList = ArrayList<String>()
+        selectedMalzemeList.addAll(selectedMalzemeler)
     }
 
 
-    private fun tahmin_et() {
-        val client = OkHttpClient()
 
-        val malzemeler = listOf("soğan", "kıyma", "biber", "domates", "tuz")
 
-        val jsonObject = JSONObject()
-        jsonObject.put("malzemeler", malzemeler)
-        val requestBody = jsonObject.toString().toRequestBody("application/json".toMediaTypeOrNull())
 
-        val request = Request.Builder()
-            .url("http://192.168.1.102:5000/oneri-yemekler")
-            .post(requestBody)
-            .build()
 
-        try {
-            val response = client.newCall(request).execute()
-            if (response != null && response.isSuccessful) {
-                binding.sonucTV.setText("${response.body!!.string()}")
 
-            } else {
-                Toast.makeText(this,"BASARISIZ", Toast.LENGTH_SHORT).show()
-            }
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-    }
 
 
     /*
