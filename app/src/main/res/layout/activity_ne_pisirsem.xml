@@ -20,6 +20,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="Ne Pişirsem?"
+            android:letterSpacing="0.16"
             android:fontFamily="@font/lobster"
             android:textStyle="bold"
             android:textColor="@color/white"
@@ -77,7 +78,8 @@
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="10dp"
-        android:text="TARİF BUL"
+        android:text="TARİF ÖNER"
+        android:textStyle="bold"
         android:textColor="@color/white"
         android:background="@drawable/buttonshape1"/>
 
@@ -89,8 +91,9 @@
         android:layout_marginTop="5dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:text="Deneme"
-        android:textSize="26sp"
+        android:fontFamily="@font/myfont"
+        android:text="Bu Tarifleri Deneyebilirsin"
+        android:textSize="16sp"
         android:textColor="@color/black"/>
 
 

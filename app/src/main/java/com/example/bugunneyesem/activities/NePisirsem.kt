@@ -1,12 +1,14 @@
 package com.example.bugunneyesem.activities
 
-import FetchYemeklerTask
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bugunneyesem.MalzemeDialog
 import com.example.bugunneyesem.MalzemeDialogListener
+import com.example.bugunneyesem.adapters.TarifAdapterNePisirsem
 import com.example.bugunneyesem.databinding.ActivityNePisirsemBinding
 import com.example.bugunneyesem.models.ModelMalzeme
+import com.example.bugunneyesem.models.ModelTarif
+import com.example.bugunneyesem.yapayzeka.OneriYemeklerTask
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -18,7 +20,9 @@ class NePisirsem : AppCompatActivity(), MalzemeDialogListener {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var malzemelerArrayList: ArrayList<ModelMalzeme>
 
-    private val API_URL = "http://127.0.0.1:5000/oneri-yemekler"
+
+    private lateinit var foodsArrayList: ArrayList<ModelTarif>
+    private lateinit var adapterNePisirsem: TarifAdapterNePisirsem
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,11 +41,14 @@ class NePisirsem : AppCompatActivity(), MalzemeDialogListener {
         binding.malzemelerTv.setOnClickListener {
             malzemePickDialog()
         }
+
         binding.kaydetBut1.setOnClickListener {
-            val fetchYemeklerTask = FetchYemeklerTask(this, binding.sonucTV)
-            val url = "http://192.168.1.102:5000/oneri-yemekler"
-            val malzemeler = listOf("çilek", "yumurta", "şeker","süt")
-            fetchYemeklerTask.execute(url, malzemeler)
+            val selectedMalzemeler = MalzemeDialog.selectedMalzemeler
+            val task = OneriYemeklerTask(this)
+            task.execute(selectedMalzemeler) { yemeklerList ->
+                // Önerilen yemeklerin listesini aldıktan sonra Firebase'den tarifleri yükle
+                loadTarifler(yemeklerList)
+            }
         }
     }
     private var id = ""
@@ -66,27 +73,8 @@ class NePisirsem : AppCompatActivity(), MalzemeDialogListener {
 
         } )
     }
-    private var selectedMalzemeId = ""
-    private var selectedMalzemeName = ""
-    /*
-         val malzemelerArray = arrayOfNulls<String>(malzemelerArrayList.size)
-        for(i in malzemelerArrayList.indices){
-            malzemelerArray[i] = malzemelerArrayList[i].name
-        }
-
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Kategori Seç")
-            .setItems(malzemelerArray){dialog, which->
-
-                selectedMalzemeName = malzemelerArrayList[which].name
-                selectedMalzemeId = malzemelerArrayList[which].id
-                //textview de göster
-                binding.malzemelerTv.text = selectedMalzemeName
 
 
-            }
-            .show()
-     */
     private fun malzemePickDialog() {
         val malzemelerArray = arrayOfNulls<String>(malzemelerArrayList.size)
 
@@ -113,32 +101,36 @@ class NePisirsem : AppCompatActivity(), MalzemeDialogListener {
 
 
 
+    private fun loadTarifler(yemekler: List<String>){
+        foodsArrayList = ArrayList()
+        val ref = FirebaseDatabase.getInstance().getReference("Tarifler")
+        ref.addValueEventListener(object  : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                foodsArrayList.clear()
+                for (ds in snapshot.children){
+                    val tarifId = ds.key?.toString()
+                    if (yemekler.contains(tarifId)) {
+                        val modelTarif = ds.getValue(ModelTarif::class.java)
+                        modelTarif?.let {
+                            foodsArrayList.add(it)
+                        }
+                    }
+                    
 
 
+                }
 
+                //adapter oluşturma
+                adapterNePisirsem = TarifAdapterNePisirsem(this@NePisirsem, foodsArrayList)
+                //adapterı recyclerview'e bağlama
+                binding.favorilerRv.adapter = adapterNePisirsem
+            }
 
+            override fun onCancelled(error: DatabaseError) {
 
+            }
 
-    /*
-    val malzemeBinding = DialogMalzemeBinding.inflate(LayoutInflater.from(this))
+        })
 
-
-    val malzemelerArray = arrayOfNulls<String>(malzemelerArrayList.size)
-    for(i in malzemelerArrayList.indices){
-        malzemelerArray[i] = malzemelerArrayList[i].name
     }
-
-    val builder = AlertDialog.Builder(this,R.style.CustomDialog)
-    var checkedIndex = ArrayList<Int>()
-    builder.setView(malzemeBinding.root)
-    builder.setMultiChoiceItems(R.array.com_google_android_gms_fonts_certs, null,DialogInterface.OnMultiChoiceClickListener{
-        _,index,checked ->
-        if(checked){
-            checkedIndex.add(index)
-        } else if(checkedIndex.contains(index)){
-            checkedIndex.remove(index)
-        }
-    })
-    builder.create()
-    */
 }
