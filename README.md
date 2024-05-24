@@ -3,13 +3,13 @@
 ## 📑 Description:
 
 #### 🟣 This is an application that shows recipes, which allows the user to add their own recipe to the application and makes recipe suggestions with machine learning.
-### 🟣 The user can create an account and log in by firebase authentication.
-### 🟣 User directed to home page that contains "Tarifler" (Recipes) "Favoriler" (Favorites) "NePişirsem?" (ML Model) "Profile" and "Tarif Ekle" (Recipe add) buttons.
-### 🟣 User can edit their profile and can add profile picture at "Profile".
-### 🟣 The recipes in the database are listed on the "Tarifler" (Recipes) page and the user can access the recipe detail page by clicking on the recipe.
-### 🟣 On the recipe detail page, the user can add the recipe to favorites and make comments.
-### 🟣 "NePişirsem?" Ml model makes a recipe suggestion to the user from the database according to the ingredients received from user.
-### 🟣 The machine learning model created in Python. API connection was provided with Flask and Retrofit.
+#### 🟣 The user can create an account and log in by firebase authentication.
+#### 🟣 User directed to home page that contains "Tarifler" (Recipes) "Favoriler" (Favorites) "NePişirsem?" (ML Model) "Profile" and "Tarif Ekle" (Recipe add) buttons.
+#### 🟣 User can edit their profile and can add profile picture at "Profile".
+#### 🟣 The recipes in the database are listed on the "Tarifler" (Recipes) page and the user can access the recipe detail page by clicking on the recipe.
+#### 🟣 On the recipe detail page, the user can add the recipe to favorites and make comments.
+#### 🟣 "NePişirsem?" Ml model makes a recipe suggestion to the user from the database according to the ingredients received from user.
+#### 🟣 The machine learning model created in Python. API connection was provided with Flask and Retrofit.
 
 </br>
 
