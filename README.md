@@ -2,7 +2,7 @@
 
 ## 📑 Description:
 
-## 🟣 This is an application that shows recipes, which allows the user to add their own recipe to the application and makes recipe suggestions with machine learning.
+#### 🟣 This is an application that shows recipes, which allows the user to add their own recipe to the application and makes recipe suggestions with machine learning.
 ### 🟣 The user can create an account and log in by firebase authentication.
 ### 🟣 User directed to home page that contains "Tarifler" (Recipes) "Favoriler" (Favorites) "NePişirsem?" (ML Model) "Profile" and "Tarif Ekle" (Recipe add) buttons.
 ### 🟣 User can edit their profile and can add profile picture at "Profile".
