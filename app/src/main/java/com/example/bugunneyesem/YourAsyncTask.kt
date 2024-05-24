@@ -13,6 +13,8 @@ class FetchYemeklerTask(private val context: Context, private val textView: Text
         // Volley kuyruğunu başlat
         val requestQueue = Volley.newRequestQueue(context)
 
+
+
         // Gönderilecek JSON verisini oluştur
         val jsonObject = JSONObject()
         jsonObject.put("malzemeler", malzemeler)
@@ -38,20 +40,24 @@ class FetchYemeklerTask(private val context: Context, private val textView: Text
                 error.printStackTrace()
                 textView.text = "Bir hata oluştu: ${error.message}"
             }) {
-            /*
+
 
             override fun getHeaders(): MutableMap<String, String> {
                 val headers = HashMap<String, String>()
                 headers["Cache-Control"] = "no-cache"
                 return headers
             }
+
+
             override fun getCacheKey(): String {
                 // Önbelleği devre dışı bırak
                 return super.getCacheKey() + "-no-cache"
             }
-            */
+
              
         }
+
+        requestQueue.cache.clear()
         // Request'i kuyruğa ekle
         requestQueue.add(jsonObjectRequest)
     }
