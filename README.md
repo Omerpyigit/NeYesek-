@@ -38,9 +38,9 @@
 |:-:|:-:|:-:|:-:|
 | ![favorites](https://github.com/Omerpyigit/NeYesek-/assets/114990181/88de2414-edec-46cc-bb92-5f8e1d53c227) | ![tarifler](https://github.com/Omerpyigit/NeYesek-/assets/114990181/50576044-b686-4d4f-a64d-74c02ad06ada) | ![tarifdetail](https://github.com/Omerpyigit/NeYesek-/assets/114990181/c6e13e1e-201e-4b83-86c3-ac428d98094d) | ![tarifadd](https://github.com/Omerpyigit/NeYesek-/assets/114990181/30c8980a-da05-46f5-8bac-b5961d385fea) |
 
-| Profile | Profile Edit | | |
+| Profile | Profile Edit | Comment Add | |
 |:-:|:-:|:-:|:-:|
-| ![profile](https://github.com/Omerpyigit/NeYesek-/assets/114990181/baae8f7f-f1ca-4144-bad9-c8ce4e5c009e) | ![profiledit](https://github.com/Omerpyigit/NeYesek-/assets/114990181/b5adc1fd-5512-4558-9eeb-96b61f82c5c7) |
+| ![profile](https://github.com/Omerpyigit/NeYesek-/assets/114990181/baae8f7f-f1ca-4144-bad9-c8ce4e5c009e) | ![profiledit](https://github.com/Omerpyigit/NeYesek-/assets/114990181/b5adc1fd-5512-4558-9eeb-96b61f82c5c7) | ![commentadd](https://github.com/Omerpyigit/NeYesek-/assets/114990181/6a0c9541-1dec-4a54-8715-6ba77a07ece3) |
 
 | NePişirsem? | Ingredients selection | Recipe suggestion | |
 |:-:|:-:|:-:|:-:|
